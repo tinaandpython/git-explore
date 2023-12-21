@@ -5,17 +5,28 @@ class Books:
         self.availability = availability
 
     def read_book(self):
-        return self.author + self.title
+        print(f"{self.title} by {self.author}")
 
     def change_availability(self):
-        book_status = int(input("Insert the status: \n 1. Available \n 2. Borrowed "))
+        book_status = int(input("Status option: \n 1. Available \n 2. Borrowed \nInsert status: "))
 
         if book_status == 1:
-            self.availability = "Available"
+            self.availability = "available"
         elif book_status == 2:
-            self.availability = "Borrowed"
+            self.availability = "borrowed"
         else:
             print("Invalid option")
 
+    def get_availability(self):
+        print(f"{self.title} by {self.author} is {self.availability}\n")
 
-book1 = Books("Jane Blare", "Mathew Summers", "Available")
+
+book1 = Books("Metamorphosis", "Franz Kafka", "available")
+book1.read_book()
+book1.change_availability()
+book1.get_availability()
+
+book2 = Books("Jane Eyr", "Charlotte Bronte", "available")
+book2.read_book()
+book2.change_availability()
+book2.get_availability()
